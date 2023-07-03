@@ -1,0 +1,4 @@
+sol_*.py
+.vscode/
+.venv/
+.idea/
