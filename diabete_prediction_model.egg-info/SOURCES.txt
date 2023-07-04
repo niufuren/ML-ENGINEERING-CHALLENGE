@@ -1,0 +1,12 @@
+README.md
+FastAPI_practice/__init__.py
+FastAPI_practice/benchmark.py
+FastAPI_practice/main.py
+FastAPI_practice/save_model.py
+FastAPI_practice/simple_linear_regr.py
+FastAPI_practice/simple_linear_regr_utils.py
+diabete_prediction_model.egg-info/PKG-INFO
+diabete_prediction_model.egg-info/SOURCES.txt
+diabete_prediction_model.egg-info/dependency_links.txt
+diabete_prediction_model.egg-info/requires.txt
+diabete_prediction_model.egg-info/top_level.txt

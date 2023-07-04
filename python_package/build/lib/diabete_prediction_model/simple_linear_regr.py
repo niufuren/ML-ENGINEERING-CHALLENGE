@@ -1,6 +1,5 @@
 import numpy as np
-from simple_linear_regr_utils import generate_data, evaluate
-import joblib
+from diabete_prediction_model.simple_linear_regr_utils import generate_data, evaluate
 
 
 class SimpleLinearRegression:
