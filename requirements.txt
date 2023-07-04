@@ -1,6 +1,6 @@
 numpy
-sklearn
 matplotlib
-
+scikit-learn
+joblib
 fastapi
 uvicorn

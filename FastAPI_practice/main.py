@@ -2,10 +2,15 @@ from fastapi import FastAPI
 from typing import List
 import numpy as np
 import joblib
-import uvicorn
+from pathlib import Path
+
 
 #load model
-model = joblib.load('./model_v0.pkl')
+ROOT_DIR = Path(__file__).resolve().parent
+model_path = ROOT_DIR / 'model_v0.pkl'  
+
+model = joblib.load(model_path)
+
 
 app = FastAPI()
 
@@ -25,4 +30,5 @@ async def predict_batch(input: List[float]):
     return {"Response Predict": result_output}
 
 if __name__ == "__main__":
-	uvicorn.run("main:app", host="localhost", port=8000, reload=True)
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
