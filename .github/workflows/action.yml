@@ -64,11 +64,12 @@ jobs:
     - name: Render Amazon ECS task definition
       id: render-web-container
       uses: aws-actions/amazon-ecs-render-task-definition@v1
+      env:
+        AWS_REGION: ap-southeast-2
       with:
         task-definition: task-definition.json
         container-name: ${{ vars.ECS_CONTAINER_NAME }}
         image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        aws-region: ap-southeast-2
         environment-variables: "LOG_LEVEL=info"
 
     - name: Deploy to Amazon ECS service
