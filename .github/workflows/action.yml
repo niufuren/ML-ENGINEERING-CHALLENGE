@@ -76,4 +76,5 @@ jobs:
         task-definition: ${{ steps.render-web-container.outputs.task-definition }}
         service: ${{ vars.ECS_SERVICE_NAME }}
         cluster: ${{ vars.ECS_CLUSTER_NAME }}
-        aws-region: ap-southeast-2
+      env:
+        AWS_REGION: ap-southeast-2
