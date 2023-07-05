@@ -64,10 +64,14 @@ jobs:
     - name: Render Amazon ECS task definition
       id: render-web-container
       uses: aws-actions/amazon-ecs-render-task-definition@v1
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        ECR_REPOSITORY: ${{ vars.ECR_REPO_NAME }}
+        IMAGE_TAG: latest
       with:
         task-definition: task-definition.json
         container-name: ${{ vars.ECS_CONTAINER_NAME }}
-        image: ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
+        image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         environment-variables: "LOG_LEVEL=info"
 
     - name: Deploy to Amazon ECS service
