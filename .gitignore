@@ -1,4 +1,5 @@
 sol_*.py
+.DS_store
 .vscode/
 .venv/
 .idea/

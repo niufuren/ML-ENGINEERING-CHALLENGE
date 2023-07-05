@@ -1,6 +1,6 @@
 import numpy as np
 from diabete_prediction_model.predict import make_prediction
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import r2_score
 from diabete_prediction_model.utils.simple_linear_regr_utils import generate_data
 
 def test_make_prediction(sample_input_data):
