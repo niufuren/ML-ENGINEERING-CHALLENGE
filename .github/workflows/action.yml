@@ -57,7 +57,7 @@ jobs:
         echo "Pushing image to ECR..."
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-  deploy:
+  deploy-staging:
     needs: [test, build]
     runs-on: ubuntu-latest
     
@@ -91,6 +91,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.render-web-container.outputs.task-definition }}
-        service: ${{ vars.ECS_SERVICE_NAME }}
-        cluster: ${{ vars.ECS_CLUSTER_NAME }}
+        service: ${{ vars.ECS_SERVICE_NAME }}-staging
+        cluster: ${{ vars.ECS_CLUSTER_NAME }}-staging
         wait-for-service-stability: true
