@@ -6,7 +6,7 @@
 * The [main.py](./src/main.py) is updated to invoke API, which is defined at [api.py](./src/api.py).
 * The prediction function is packaged in the folder of [python_package](./python_package).
 * The end to end function is packaged in [Docker container](Dockerfile).
-* The CI/CD pipeline is established through GitHub Actions. 
+* The CI/CD pipeline is established through [GitHub Actions](https://github.com/niufuren/ML-ENGINEERING-CHALLENGE/actions). 
 * The components of an enterprise machine learning system can be found at [machine_learning_component.md](./docs/machine_learning_component.md).
 
 
