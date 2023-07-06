@@ -1,8 +1,8 @@
 # Machine Learning Component
 
 For an enterprise machine learning system, it is worthwhile to add the following components to cover
-the lifecycle of machine learning system development. These components ard divided into critical parts and
-nice to have parts according to the impacts
+the lifecycle of machine learning system development. These components are divided into critical parts and
+nice to have parts according to the impacts.
 
 ## Critical components:
 * Model monitoring and reporting
