@@ -10,10 +10,18 @@ model = joblib.load(model_path)
 
 
 def test_make_prediction(sample_input_data):
+    '''Test the model perfromance to detect if model output as expected,
+    i.e the data type, the count of data in predicted output and the model performance
+    '''
     
+    # Given
     expected_no_prediction = 20
     _, _, x_test, y_test = sample_input_data
+    
+    # When
     y_predicted = model.predict(x_test)
+    
+    # Then
     assert isinstance(y_predicted, np.ndarray)
     assert len(y_predicted) == expected_no_prediction
     

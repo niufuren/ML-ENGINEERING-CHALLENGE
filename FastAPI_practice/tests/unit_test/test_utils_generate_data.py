@@ -17,5 +17,5 @@ def test_duplicates_in_test_training(sample_input_data):
                          left_on=['x_train', 'y_train'],
                          right_on = ['x_test', 'y_test'] 
                          )
-    duplicates =[]
-    assert len(duplicates) == 0
+
+    assert len(duplicates) < 2

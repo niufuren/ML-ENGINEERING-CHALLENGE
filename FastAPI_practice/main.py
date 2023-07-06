@@ -14,14 +14,14 @@ model = joblib.load(model_path)
 
 app = FastAPI()
 
-@app.post("/predict")
+@app.post("/stream")
 async def predict(input: float):
     result = model.predict(input)
     result_show = result.flatten().tolist()
 
     return {"Response Predict": result_show}
 
-@app.post("/predict_batch")
+@app.post("/batch")
 async def predict_batch(input: List[float]):
     input_transform = np.array(input)[:, np.newaxis]
     result = model.predict(input_transform)

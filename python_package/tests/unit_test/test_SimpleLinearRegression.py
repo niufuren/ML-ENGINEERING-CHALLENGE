@@ -1,6 +1,7 @@
 import pytest
 from diabete_prediction_model.simple_linear_regr.simple_linear_regr import SimpleLinearRegression
 from diabete_prediction_model.utils.simple_linear_regr_utils import generate_data
+import numpy as np
 
 def test_fit(sample_input_data):
     '''Test fit to dectect if the loss decreases when SGD is implemnted once
@@ -27,9 +28,6 @@ def test_predict(x_input, y_exprected):
     # When
     y_predicted = model.predict(x_input)
     #Then
-    assert len(y_predicted) == len(y_exprected)
-    assert all( y_predicted_i == y_expected_i 
-               for y_predicted_i, y_expected_i in zip(y_predicted, y_exprected) 
-               )
+    assert np.array_equal(y_predicted, y_exprected)
 
     
