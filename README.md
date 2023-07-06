@@ -28,10 +28,13 @@ Benchmark result:
 The CI/CD pipeline is established through GitHub Actions. When the code is pushed to GitHub repository, the GitHub Action
 triggers a sequences of events. First, it runs tests to ensure the code and model quality. Next, it proceeds to build a Docker 
 container image and pushes it to the AWS.
+
 Subsequently, the pipeline initiates the deployment process to the staging environment on AWS ECS (Elastic Container Service).
 Once the staging environment is deployed, the pipeline executes integration tests against the staging environment 
 (this is a concept demo, no real tests running). Following the integration tests, the pipeline runs deployment to the AWS ECS production 
 environment.
+
+<img width="1851" alt="image" src="https://github.com/niufuren/ML-ENGINEERING-CHALLENGE/assets/2469706/af4dac64-4ff1-4940-90e1-7db59f652458">
 
 
 ### Model servicing 
