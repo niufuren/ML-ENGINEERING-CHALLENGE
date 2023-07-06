@@ -5,3 +5,5 @@ joblib
 fastapi
 uvicorn
 pandas
+httpx
+pydantic
