@@ -39,7 +39,7 @@ environment.
 
 ### Model servicing 
 The application is hosted on the AWS ECS service. 
-To test the staging environment, you can access the API documentation at http://13.211.43.43:8000/docs. 
-For the production environment, the API documentation is available at http://3.27.154.6:8000/docs.
+To test the staging environment, you can access the API documentation at [here](http://load-balancer-staging-865855441.ap-southeast-2.elb.amazonaws.com/docs)
+For the production environment, the API documentation is available at [here](http://load-balancer-production-866833777.ap-southeast-2.elb.amazonaws.com/docs)http://load-balancer-production-866833777.ap-southeast-2.elb.amazonaws.com/docs
 
 ## Usage
