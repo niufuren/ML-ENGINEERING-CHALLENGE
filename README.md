@@ -17,7 +17,12 @@ training sample. The algorithm greatly improves the computational efficiency com
 
 #### Model validation 
 The model is validated through coefficient of determination. When the model performance is greater than the threshold
-value, i.e. `0.4` in this case, the model is used for prediction. 
+value, i.e. `0.4` in this case, the model is used for prediction.
+
+Benchmark result:
+
+![image](https://github.com/niufuren/ML-ENGINEERING-CHALLENGE/assets/2469706/ba479773-a8c9-48c9-b719-2de73b471764)
+
 
 ### CI/CD
 The CI/CD pipeline is established through GitHub Actions. When the code is pushed to GitHub repository, the GitHub Action
