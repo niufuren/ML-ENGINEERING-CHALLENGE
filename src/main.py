@@ -1,5 +1,4 @@
 from fastapi import FastAPI, APIRouter
-from pathlib import Path
 from api import api_router
 
 app = FastAPI()
