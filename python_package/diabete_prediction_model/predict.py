@@ -5,7 +5,7 @@ import numpy as np
 
     
 ROOT_DIR = Path(__file__).resolve().parent
-model_path = ROOT_DIR / 'trained_model/model_v1.pkl'  
+model_path = ROOT_DIR / 'trained_model/model_v0.0.1.pkl'  
 
 _model = joblib.load(model_path)
 

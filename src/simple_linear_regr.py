@@ -19,7 +19,6 @@ class SimpleLinearRegression:
             loss: the sum of squared error
 
         """
-        #ToDO calculate the loss. use the sum of squared error formula for simplicity
         loss = np.sum((y - y_hat) ** 2)
 
         self.losses.append(loss)
@@ -35,6 +34,14 @@ class SimpleLinearRegression:
         self.b = weights[-1]
         
     def __gradient(self, X, y):
+        """
+        :param X: The training sample
+        :param y: The actual output of the training sample
+        
+        :return:
+            dW: the derivative of slope 
+            db: the derivative of intercept
+        """
         y_pred = self.predict(X)
         error = y_pred - y
         dW = 2 * np.dot(X.T, error) / y.shape[0]
@@ -55,37 +62,19 @@ class SimpleLinearRegression:
 
         # Shuffle the data
         indices = np.random.permutation(n_obs)
-        batch_size = 32
         X = X[indices]
         y = y[indices]
-        
         X_i = X[0]
         y_i = y[0]
+        
+        # calcuate the gradient
         gradient = self.__gradient(X_i, y_i)
         dW = gradient[0]
         db = gradient[1]
+        
+        # update W and b with derivate and learning rate
         self.W -= self.lr * dW
         self.b -= self.lr * db
-        
-        # for i in range(0, n_obs, batch_size):
-        #     X_batch = X[i:i+batch_size]
-        #     y_batch = y[i:i+batch_size]
-        #     gradient = self.__gradient(X_batch, y_batch)
-        #     dW = gradient[0]
-        #     db = gradient[1]
-        #     self.W -= self.lr * dW
-        #     self.b -= self.lr * db
-            
-            # if np.linalg.norm(gradient) < tolerence_convergence:
-            #     break
-                
-        
-        # ToDo calculate dW & db.
-        # dW = None
-        # db = None
-        #  ToDO update the self.W and self.b using the learning rate and the values for dW and db
-        # self.W = None
-        # self.b = None
 
 
     def fit(self, X, y):
@@ -113,7 +102,6 @@ class SimpleLinearRegression:
         :return:
             y_hat: the predicted output
         """
-        #ToDO calculate the predicted output y_hat. remember the function of a line is defined as y = WX + b
         y_hat = np.dot(X, self.W) + self.b
         return y_hat
 

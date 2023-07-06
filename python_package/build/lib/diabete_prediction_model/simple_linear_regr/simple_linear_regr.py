@@ -33,6 +33,14 @@ class SimpleLinearRegression:
         self.b = weights[-1]
         
     def __gradient(self, X, y):
+        """
+        :param X: The training sample
+        :param y: The actual output of the training sample
+        
+        :return:
+            dW: the derivative of slope 
+            db: the derivative of intercept
+        """
         y_pred = self.predict(X)
         error = y_pred - y
         dW = 2 * np.dot(X.T, error) / y.shape[0]
@@ -57,9 +65,13 @@ class SimpleLinearRegression:
         
         X_i = X[0]
         y_i = y[0]
+        
+        # calcuate the gradient
         gradient = self.__gradient(X_i, y_i)
         dW = gradient[0]
         db = gradient[1]
+        
+        # update W and b with derivate and learning rate
         self.W -= self.lr * dW
         self.b -= self.lr * db
 

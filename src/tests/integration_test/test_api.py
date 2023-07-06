@@ -5,22 +5,33 @@ from main import app
 client = TestClient(app)
 
 def test_stream():
+    '''Test the stream API to detect if the response as expected.
+    '''
+    
+    # Given
     response = client.post(
         "/stream", 
         json={"input": 3}
         )
 
+    # When
     result = response.json()['Response Predict']
+    
+    # Then
     assert len(result) == 1
     
 def test_batch():
-    payload = json.dumps({"input": (3, 4)})
+    '''Test the stream API to detect if the response as expected.
+    '''
+    # Given
     response = client.post(
         "/batch", 
         json={"input": [3,4]}
         )
 
-    print(response.json())
+    # When
     result = response.json()['Response Predict']
+    
+    # Then
     assert len(result) == 2
     
