@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-ENTRYPOINT ["python", "FastAPI_practice/main.py"]
+ENTRYPOINT ["python", "src/main.py"]
