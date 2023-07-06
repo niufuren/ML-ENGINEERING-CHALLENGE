@@ -95,8 +95,17 @@ jobs:
         cluster: ${{ vars.ECS_CLUSTER_NAME }}-staging
         wait-for-service-stability: true
 
-  deploy-production:
+  integration-test:
     needs: [deploy-staging]
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Run test
+      run: 
+        echo "Run some integration tests against staging environment"
+    
+  deploy-production:
+    needs: [deploy-staging, integration-test]
     runs-on: ubuntu-latest
     
     steps:
