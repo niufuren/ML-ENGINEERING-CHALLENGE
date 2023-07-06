@@ -1,5 +1,15 @@
 # ML - Engineering challenge
 
+## Overview
+
+* The simple linear regression model is implemented in [simple_linear_regr.py](./src/simple_linear_regr.py).
+* The [main.py](./src/main.py) is updated to invoke API, which is defined at [api.py](./src/api.py).
+* The code is packaged in the folder of [python_package](./python_package).
+* The [Dockerfile](Dockerfile) package the code into a container.
+* The CI/CD pipeline is established through GitHub Actions. 
+* The components of an enterprise machine learning system can be found at [machine_learning_component.md](./docs/machine_learning_component.md).
+
+
 ## Objective
 
 This system aims to predict the progress of diabetes in one year using bmi(body mass index). The input of the system is 
@@ -42,4 +52,3 @@ The application is hosted on the AWS ECS service.
 To test the staging environment, you can access the API documentation at [here](http://load-balancer-staging-865855441.ap-southeast-2.elb.amazonaws.com/docs).  
 To test production environment, the API documentation is available at [here](http://load-balancer-production-866833777.ap-southeast-2.elb.amazonaws.com/docs).
 
-## Usage
